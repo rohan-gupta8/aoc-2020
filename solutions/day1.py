@@ -17,4 +17,3 @@ for i in sums:
     if (2020 - i[0]) in inp and 2020 - i[0] not in i[1]:
         print(f"Part 2: {math.prod(i[1])*(2020 - i[0])}")
         break
-

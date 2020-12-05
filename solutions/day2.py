@@ -1,5 +1,3 @@
-
-
 f = open("inputs/day2.txt", "r")
 
 inp = list(f.read().split("\n"))
@@ -12,7 +10,7 @@ for i in inp:
     char = spl[1][0]
 
     if minf <= spl[2].count(char) <= maxf:
-        c +=1
+        c += 1
 
 print(f"Part 1: {c}")
 
@@ -24,6 +22,6 @@ for i in inp:
     char = spl[1][0]
 
     if (spl[2][first - 1] == char) ^ (spl[2][last - 1] == char):
-        c +=1
+        c += 1
 
 print(f"Part 2: {c}")
