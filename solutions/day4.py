@@ -45,7 +45,10 @@ for i in valid:
         and all([k in a2f or k in z29 for k in i["hcl"][1:]])
         and len(i["hcl"]) == 7
     )
-    b6 = i["ecl"] in ["amb", "blu", "brn", "grn", "gry", "hzl", "oth"] and len(i["ecl"]) == 3
+    b6 = (
+        i["ecl"] in ["amb", "blu", "brn", "grn", "gry", "hzl", "oth"]
+        and len(i["ecl"]) == 3
+    )
     b7 = len(i["pid"]) == 9 and all(char.isdigit() for char in i["pid"])
     if b1 and b2 and b3 and b4 and b5 and b6 and b7:
         c += 1
