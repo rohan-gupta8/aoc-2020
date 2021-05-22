@@ -3,6 +3,7 @@ f = open("inputs/day6.txt", "r").read().split("\n")
 totalc, groupstr = 0, ""
 
 # Part 1
+
 for line in f:
     if line == "":
         totalc += len(set(list(groupstr)))
@@ -14,9 +15,8 @@ print(totalc)
 
 # Part 2
 
-totalc = 0
-groupstr = ""
-groupsize = 0
+totalc, groupstr, groupsize = 0, "", 0
+
 for line in f:
     if line == "":
         groupset = set(list(groupstr))
