@@ -11,7 +11,7 @@ def main(f):
             acc += int(val)
         if c == "jmp":
             p += int(val) - 1
-    return p >= len(f), acc
+    return p == len(f), acc
 
 
 print(main(f)[1])
