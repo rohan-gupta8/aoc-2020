@@ -5,7 +5,7 @@ f = list(map(int, open("inputs/day9.txt", "r").read().split("\n")))
 n = len(f)
 
 for i in range(25, len(f)):
-    if f[i] not in [sum(j) for j in list(itertools.combinations(f[i - 25: i], 2))]:
+    if f[i] not in [sum(j) for j in list(itertools.combinations(f[i - 25 : i], 2))]:
         invalid = f[i]
         print(invalid)
         break
