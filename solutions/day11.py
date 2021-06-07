@@ -9,13 +9,19 @@ y = grid.shape[1]
 
 while True:
     flag = True
-    padded = np.pad(grid, 1, mode='constant', constant_values='L')
+    padded = np.pad(grid, 1, mode="constant", constant_values="L")
     for i in range(1, x + 1):
         for j in range(1, y + 1):
-            if not np.any(padded[i - 1:i + 2, j - 1:j + 2] == '#') and padded[i][j] == "L":
+            if (
+                not np.any(padded[i - 1 : i + 2, j - 1 : j + 2] == "#")
+                and padded[i][j] == "L"
+            ):
                 grid[i - 1][j - 1] = "#"
                 flag = False
-            elif np.count_nonzero(padded[i - 1:i + 2, j - 1:j + 2] == '#') >= 5 and padded[i][j] == "#":
+            elif (
+                np.count_nonzero(padded[i - 1 : i + 2, j - 1 : j + 2] == "#") >= 5
+                and padded[i][j] == "#"
+            ):
                 grid[i - 1][j - 1] = "L"
                 flag = False
     if flag:
@@ -25,13 +31,13 @@ while True:
 # Part 2: also most inefficient solution world
 grid = np.array([list(i) for i in open("inputs/day11.txt", "r").read().split("\n")])
 
+
 def num_visible_occupied(arr, x, y):
     count = 0
-    deltas = [(-1, -1), (-1, 0), (-1, 1),(0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+    deltas = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
     for (dx, dy) in deltas:
         nx, ny = (x + dx, y + dy)
-        while ((0 <= nx <= len(arr) - 1) and
-               (0 <= ny <= len(arr[0]) - 1)):
+        while (0 <= nx <= len(arr) - 1) and (0 <= ny <= len(arr[0]) - 1):
             if arr[nx][ny] == "L":
                 break
             if arr[nx][ny] == "#":

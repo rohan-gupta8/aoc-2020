@@ -1,8 +1,8 @@
-f = open("inputs/day12.txt").read().split('\n')
+f = open("inputs/day12.txt").read().split("\n")
 
 # Note: Probably should have pattern matched for this one
 
-dir_map = {0:"E", 90: "S", 180: "W", 270: "N"}
+dir_map = {0: "E", 90: "S", 180: "W", 270: "N"}
 dir = 0
 N = 0
 E = 0
@@ -25,7 +25,7 @@ for line in f:
     if d == "W":
         E -= value
 
-print(abs(N)+abs(E))
+print(abs(N) + abs(E))
 
 
 # Part 2
